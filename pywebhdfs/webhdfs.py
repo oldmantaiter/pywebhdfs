@@ -781,5 +781,7 @@ def _move_active_host_to_head(hosts, active_host):
     """
     to improve efficiency move active host to head
     """
-    hosts.remove(active_host)
-    hosts.insert(0, active_host)
+    _hosts = [h for h in hosts]
+    _hosts.remove(active_host)
+    _hosts.insert(0, active_host)
+    hosts = _hosts
